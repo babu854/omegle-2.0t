@@ -1,0 +1,99 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+.navbar {
+    height: 70px;
+    background-color: whitesmoke;
+    padding: 10px 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include laptop {
+        padding: 10px 100px;
+    }
+
+    @include tablet {
+        padding: 10px 50px;
+    }
+
+    @include mobile {
+        padding: 10px 20px;
+    }
+
+    .left {
+        cursor: pointer;
+    }
+
+    .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        @include tablet {
+            display: none;
+        }
+
+
+        .link {
+            text-decoration: none;
+            color: black;
+            font-weight: 400;
+
+            &:hover {
+                color: rgb(72, 71, 71);
+            }
+        }
+
+    }
+
+    .menu {
+        display: none;
+
+        @include tablet {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.menu_items {
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    height: calc(100vh - 70px);
+    width: 50%;
+
+    .link {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: rgb(72, 71, 71);
+        }
+    }
+
+}

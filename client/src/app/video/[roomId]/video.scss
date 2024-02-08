@@ -1,0 +1,121 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin smallTablet {
+    @media screen and (max-width: 700px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+.video {
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffe5cc;
+        padding: 10px 150px;
+        height: calc(100vh - 70px);
+
+        @include laptop {
+            padding: 10px 100px;
+        }
+
+        @include smallTablet {
+            flex-direction: column;
+        }
+
+        @include tablet {
+            padding: 10px 50px;
+        }
+
+        @include mobile {
+            padding: 0px 0px;
+        }
+
+        .left {
+            flex: 1;
+            height: 100%;
+
+            @include smallTablet {
+                width: 100%;
+            }
+
+            .videos {
+                background-color: #ffe5cc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100%;
+                border-radius: 10px;
+                gap: 10px;
+                overflow: hidden;
+
+                @include smallTablet {
+                    flex-direction: row;
+                }
+
+                @include mobile {
+                    flex-direction: column;
+                }
+
+                .user_video {
+                    flex: 1;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: gray;
+
+                    @include smallTablet {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .right {
+            flex: 1.5;
+            height: 100%;
+            margin-left: 10px;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+
+            @include smallTablet {
+                margin-left: 0px;
+                margin-top: 10px;
+            }
+
+            .chats {
+                height: 50px;
+                padding: 10px;
+                background-color: #3F9FFE;
+                display: flex;
+                align-items: center;
+                color: white;
+            }
+
+            .messages {
+                background-color: #f8f0e8;
+                padding: 10px;
+                height: calc(100% - 100px);
+                overflow: scroll;
+            }
+        }
+    }
+}

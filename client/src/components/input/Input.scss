@@ -1,0 +1,40 @@
+.input {
+    background-color: white;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    button {
+        border: none;
+        padding: 10px 15px;
+        color: black;
+        background-color: #3F9FFE;
+        cursor: pointer;
+        color: white;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 16px;
+
+        &::placeholder {
+            color: lightgray;
+        }
+    }
+
+    .img {
+        cursor: pointer;
+    }
+
+    .send {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+    }
+}

@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin smallMobile {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin smallTablet {
+    @media screen and (max-width: 660px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+
+.home {
+    font-family: 'Montserrat', sans-serif;
+
+    .container {
+        height: calc(100vh - 70px);
+        background: #ffe5cc;
+        padding: 60px 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include laptop {
+            padding: 10px 100px;
+        }
+
+        @include tablet {
+            padding: 10px 50px;
+        }
+
+        @include mobile {
+            padding: 10px 20px;
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
+
+        @include smallTablet {
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
+
+        .left {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+
+            @include smallTablet {
+                align-items: center;
+            }
+
+            .text {
+                padding-top: 100px;
+                flex: 1;
+
+                @include smallTablet {
+                    padding-top: 50px;
+                }
+
+                @include mobile {
+                    padding-top: 30px;
+                }
+
+             
+
+                p {
+                    font-size: 40px;
+                    color: rgb(59, 59, 59);
+
+                    @include laptop {
+                        font-size: 30px;
+                    }
+
+                    @include tablet {
+                        font-size: 25px;
+                    }
+
+                    @include smallTablet {
+                        font-size: 30px;
+                    }
+
+                    @include smallMobile {
+                        font-size: 17px;
+                    }
+                }
+            }
+
+            .action {
+                flex: 1;
+                margin-top: 40px;
+             
+                @include smallMobile {
+                    width: 100%;
+                    margin-top: 0;
+                }
+
+                .chat_btns {
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    @include smallMobile {
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+
+                    gap: 10px;
+
+                    .video_btn {
+                        .link {
+                            align-items: center;
+                            background-clip: padding-box;
+                            background-color: #3F9FFE;
+                            border: 1px solid transparent;
+                            border-radius: 10px;
+                            box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+                            box-sizing: border-box;
+                            color: #fff;
+                            cursor: pointer;
+                            display: inline-flex;
+                            font-size: 20px;
+                            font-weight: 600;
+                            justify-content: center;
+                            line-height: 1.25;
+                            margin: 0;
+                            min-height: 3rem;
+                            padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+                            position: relative;
+                            text-decoration: none;
+                            transition: all 250ms;
+                            user-select: none;
+                            -webkit-user-select: none;
+                            touch-action: manipulation;
+                            vertical-align: baseline;
+                            width: 150px;
+
+
+                            &:hover,
+                            &:focus {
+                                background-color: #fb8332;
+                                box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+                            }
+
+                            &:hover {
+                                transform: translateY(-1px);
+                            }
+
+                            &:active {
+                                background-color: #c85000;
+                                box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+                                transform: translateY(0);
+                            }
+                        }
+
+                    }
+
+                    .text_btn {
+                        .link {
+                            align-items: center;
+                            background-color: #ffe5cc;
+                            border: 2px solid #3F9FFE;
+                            border-radius: 10px;
+                            box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+                            box-sizing: border-box;
+                            color: #3F9FFE;
+                            cursor: pointer;
+                            display: inline-flex;
+                            font-size: 20px;
+                            font-weight: 600;
+                            justify-content: center;
+                            line-height: 1.25;
+                            margin: 0;
+                            min-height: 3rem;
+                            padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+                            position: relative;
+                            text-decoration: none;
+                            transition: all 250ms;
+                            user-select: none;
+                            -webkit-user-select: none;
+                            touch-action: manipulation;
+                            vertical-align: baseline;
+                            width: 150px;
+
+
+                            &:hover,
+                            &:focus {
+                                background-color: #fb8332;
+                                color: #fff;
+                                border: none;
+                                box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+                            }
+
+                            &:hover {
+                                transform: translateY(-1px);
+                            }
+
+                            &:active {
+                                background-color: #c85000;
+                                box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+                                transform: translateY(0);
+                            }
+                        }
+                    }
+                }
+
+                h3 {
+                    font-size: 20px;
+                    color: rgb(41, 40, 40);
+
+                    @include smallMobile {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .notice {
+                flex: 1;
+                font-size: 14px;
+                color: gray;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+
+            }
+        }
+
+        .right {
+            .img {
+                object-fit: cover;
+
+                @include tablet {
+                    height: 350px;
+                    width: 300px;
+                }
+
+                @include smallTablet {
+                    height: 100%;
+                    width: 100%;
+                }
+
+                @include mobile {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
